@@ -27,8 +27,6 @@ What carbonlight does **not** do (yet, by design):
 - **No ambient-light gating.** Most laptops — including the X1 Carbon Gen 13
   this was developed on — don't expose an ALS to Linux. Adding a webcam-
   luminance or time-of-day substitute is on the roadmap.
-- **No smooth fade.** ThinkPad backlights have only 0/1/2 levels in hardware.
-  The "fade" is one or two stepped transitions, not a continuous ramp.
 
 ---
 
