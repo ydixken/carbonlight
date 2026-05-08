@@ -1,0 +1,27 @@
+[Unit]
+Description=carbonlight - Mac-like keyboard backlight
+Documentation=https://github.com/ydixken/carbonlight
+After=systemd-user-sessions.service
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/carbonlight
+Restart=on-failure
+RestartSec=2
+Nice=10
+
+# Hardening: only need to read input devices and write the LED.
+ProtectSystem=strict
+ReadWritePaths=/sys/class/leds
+ProtectHome=read-only
+PrivateTmp=true
+ProtectKernelTunables=true
+ProtectKernelModules=true
+ProtectControlGroups=true
+NoNewPrivileges=true
+RestrictAddressFamilies=AF_UNIX
+LockPersonality=true
+MemoryDenyWriteExecute=true
+
+[Install]
+WantedBy=multi-user.target

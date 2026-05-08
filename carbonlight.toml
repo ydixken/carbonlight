@@ -1,0 +1,19 @@
+# carbonlight: keyboard backlight daemon configuration
+# https://github.com/ydixken/carbonlight#configuration
+#
+# Reload after changes:  sudo systemctl restart carbonlight
+
+# Backlight level when input is detected (0 = off).
+# ThinkPad hardware: 0..2 (off / low / high). Some Dell models go to 3.
+# The daemon clamps this to the LED's max_brightness automatically.
+target_level = 1
+
+# Seconds of input inactivity before the backlight fades off.
+idle_timeout_s = 5.0
+
+# Per-level dwell during fade-out (only visible when target_level >= 2).
+fade_step_s = 0.12
+
+# Optional: explicit LED sysfs path. Leave commented to autodetect.
+# Useful if your laptop has a non-standard backlight name (e.g. asus, dell).
+# led_path = "/sys/class/leds/tpacpi::kbd_backlight"
